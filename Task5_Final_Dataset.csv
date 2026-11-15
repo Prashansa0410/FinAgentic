@@ -1,0 +1,868 @@
+id,seed_id,seed_category,intent,instruction,classification,mode,input,output,quality_score,quality_reason
+INST_01,SEED_01,Card Loss & Replacement,lost_or_stolen_card,Classify the customer request as 'Card Loss & Replacement' if they report their lost debit card.,Yes,Output-First,I recently reported my debit card as lost and need to get a new one. Could you please assist with that?,lost_or_stolen_card,5,"The output 'lost_or_stolen_card' is clear, relevant, and executable for the customer scenario of reporting a lost/dead card. It also aligns with the banking safety criteria by indicating an urgent action needed."
+INST_02,SEED_01,Card Loss & Replacement,lost_or_stolen_card,"After verifying the customer's identity, immediately freeze the lost debit card to prevent unauthorized transactions.",No,Input-First,"Subject: Immediate Action Required - Lost Debit Card
+
+Dear [Customer Name],
+
+I hope this message finds you well. As part of our security measures following your recent request to freeze your lost debit card, we have taken immediate action to secure your account.
+
+Your [Account Type] account has been frozen to prevent any unauthorized transactions. Please note that all transactions initiated from this card will now be declined.
+
+We understand this may cause inconvenience and appreciate your cooperation in ensuring the safety of your funds. If you need further assistance or have any questions, please do not hesitate to contact us at [Customer Service Contact Information].
+
+Thank you for your understanding and continued trust in our services.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. Verify identity of the customer using `verify_identity` to ensure the request is legitimate.
+2. Check the account status to confirm the debit card is indeed lost and the account is frozen using `check_account_status`.
+3. Execute the action of freezing the debit card as requested using `execute_action`.
+4. Send a confirmation message to the customer to inform them that the action has been completed using `send_confirmation`.
+5. Escalate the case to a human representative if necessary, but given the immediate nature of the request, this step might not be required based on the provided tools. However, if needed, use `escalate_to_human`.",5,"The output addresses all six criteria effectively with clear, actionable steps."
+INST_03,SEED_01,Card Loss & Replacement,lost_or_stolen_card,Order a new debit card for the customer after successfully verifying their identity and freezing the lost card.,No,Input-First,"Subject: New Debit Card Ordered Successfully
+
+Dear [Customer's Name],
+
+I hope this message finds you well.
+
+I am writing to inform you that your request to order a new debit card has been processed successfully. Your old card was frozen as per our security protocols following the verification of your identity and the reporting of the lost card.
+
+Your new debit card has been issued and is ready for pickup at our nearest branch. Please note that your new card will be activated once it is collected from the branch. 
+
+Additionally, I would like to inform you that your account balance remains unaffected during this process. If you have any questions or need further assistance, please do not hesitate to contact us.
+
+Thank you for choosing [Bank Name]. We appreciate your business and look forward to serving you better in the future.
+
+Best regards,
+
+[Your Name]  
+Customer Service Representative  
+[Bank Name]  
+[Contact Information]","1. execute_action - Order a new debit card based on the successful verification of identity and account status checks.
+2. send_confirmation - Inform the customer that their request to order a new debit card has been processed successfully.
+3. check_account_status - Verify that the account balance remains unaffected during the process.
+4. escalate_to_human - If necessary, escalate the case to a human representative if there are any issues or concerns that require additional attention.
+5. execute_action - Issue the new debit card and ensure it is ready for pickup at the nearest branch.
+6. send_confirmation - Notify the customer that their new debit card has been issued and is ready for collection at the nearest branch.
+7. execute_action - Activate the new debit card once it is collected from the branch.
+8. send_confirmation - Inform the customer that their new debit card has been activated.
+9. send_confirmation - Confirm the account balance remains unaffected during the process.
+10. send_confirmation - Provide the customer with contact information for further assistance if needed.",5,The output provided covers all the required steps and criteria effectively.
+INST_04,SEED_01,Card Loss & Replacement,lost_or_stolen_card,Authenticate the customer's identity using a secure method such as a biometric scan or a security token.,No,Input-First,"Subject: Urgent Identity Verification Request
+
+Dear [Customer Name],
+
+I hope this message finds you well. As part of our enhanced security measures to protect your account and ensure the integrity of your transactions, we need to verify your identity immediately.
+
+Please proceed with the following steps:
+
+1. Log in to your online banking platform.
+2. Navigate to the ""Security"" or ""Identity Verification"" section.
+3. Select the option to authenticate using a biometric scan.
+4. Follow the on-screen instructions to complete the verification process.
+
+For additional security, please note that this transaction will involve a transfer of $500 from your [Account Type] account to [Merchant Name]. This is a precautionary measure to prevent any unauthorized access to your funds.
+
+We appreciate your prompt attention to this matter and assure you that all information provided will be handled with the utmost confidentiality.
+
+Thank you for your cooperation.
+
+Best regards,
+
+[Your Name]
+[Your Contact Information]
+[Bank Name]","1. execute_action - Log in to the customer's online banking platform.
+2. execute_action - Navigate to the ""Security"" or ""Identity Verification"" section within the online banking platform.
+3. execute_action - Select the option to authenticate using a biometric scan.
+4. execute_action - Follow the on-screen instructions to complete the verification process.
+5. check_account_status - Verify the account status and confirm the availability of $500 for the transfer.
+6. execute_action - Execute the transfer of $500 from the customer's [Account Type] account to [Merchant Name].
+7. send_confirmation - Send a confirmation email to the customer regarding the successful completion of the identity verification and the transfer.
+8. escalate_to_human - If there are any issues during the process or if the customer has questions, escalate the case to a human representative for further assistance.",5,"The response covers all six criteria effectively and provides a clear, actionable plan."
+INST_08,SEED_01,Card Loss & Replacement,lost_or_stolen_card,Review the transaction history of the customer's account to ensure no unauthorized charges have occurred since the card was reported lost.,No,Input-First,"Subject: Review of Transaction History Following Card Loss Report
+
+Dear [Customer Name],
+
+I hope this message finds you well. I am writing to review your recent transaction history following your report of your credit/debit card being lost on [Date of Report]. Our team has been closely monitoring your account and has identified some transactions that need further attention.
+
+As per our records, on [Date of First Unusual Transaction], there was a purchase made at [Merchant Name] with an amount of $[Amount]. This transaction is currently under investigation to determine its legitimacy.
+
+Additionally, on [Date of Second Unusual Transaction], another purchase was made at [Another Merchant Name] with an amount of $[Another Amount]. We will also be reviewing this transaction to ensure it complies with your authorization.
+
+We understand that these occurrences may cause concern and we are taking immediate steps to secure your account and address any issues promptly. If you have any additional information or concerns regarding these transactions, please do not hesitate to contact us at [Customer Service Contact Information].
+
+Thank you for bringing this to our attention. We appreciate your patience and cooperation during this time.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. Verify the identity of the customer using the `verify_identity` tool.
+2. Check the current status of the customer's account using the `check_account_status` tool.
+3. Send a confirmation email to the customer acknowledging receipt of their report and the steps being taken to investigate the unusual transactions.
+4. Execute an action to monitor and investigate the first unusual transaction made on [Date of First Unusual Transaction] at [Merchant Name] with an amount of $[Amount].
+5. Execute an action to monitor and investigate the second unusual transaction made on [Date of Second Unusual Transaction] at [Another Merchant Name] with an amount of $[Another Amount].
+6. Escalate the case to a human representative if the transactions cannot be resolved through automated processes or if the customer requests further assistance.
+7. Send a follow-up email to the customer after the investigations are completed, providing them with the results and any necessary actions they should take.
+8. Update the customer's account status in the system to reflect the outcome of the investigations.
+9. Send a final confirmation email to the customer summarizing the actions taken and the results of the investigations.
+10. Archive the case and update the customer's record in the system with the",5,"The response addresses all criteria effectively and provides clear, actionable steps."
+INST_09,SEED_01,Card Loss & Replacement,lost_or_stolen_card,"Provide the customer with a temporary solution, such as a prepaid card, while their new debit card is being processed.",No,Input-First,"Subject: Temporary Solution for Your New Debit Card
+
+Dear [Customer's Name],
+
+I hope this message finds you well. I understand that your new debit card is currently being processed and we appreciate your patience.
+
+In the meantime, to ensure you can continue to manage your finances smoothly, we have arranged for a prepaid card to be issued in your name. The prepaid card will be loaded with $500 USD and will be sent to the address provided during the application process.
+
+Please note that the prepaid card will be active immediately upon receipt and can be used at any of our partner merchants listed below:
+
+- [Merchant Name 1]
+- [Merchant Name 2]
+- [Merchant Name 3]
+
+Please keep the prepaid card safe and use it responsibly. Once your new debit card arrives, please follow the instructions to transfer funds from the prepaid card to your new account.
+
+If you have any questions or need further assistance, please do not hesitate to contact us at [Customer Service Contact Information].
+
+Thank you for your understanding and cooperation.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. Verify identity of the customer using `verify_identity` tool.
+2. Check the status of the new debit card issuance using `check_account_status` tool.
+3. If the new debit card is not yet available, proceed to issue the prepaid card as per the customer request.
+4. Load $500 USD onto the prepaid card using `execute_action` tool.
+5. Send the prepaid card to the customer's provided address using `send_confirmation` tool.
+6. Notify the customer about the prepaid card details including the loading amount and the merchant list.
+7. Inform the customer that the prepaid card will be active immediately upon receipt.
+8. Provide the customer with the contact information for further assistance if needed.
+9. Escalate to human support if there are any issues or concerns raised by the customer after sending the prepaid card.
+10. Follow up with the customer once the prepaid card has been received to ensure they have activated it and are aware of its usage.
+11. Update the customer's account status to reflect the prepaid card issuance and the transfer process.
+12. Document the entire process for future reference and potential customer inquiries.",5,"The output provides a comprehensive and structured approach to handling the customer's request, covering all six criteria effectively."
+INST_11,SEED_02,Fee Dispute & Waiver,fee_dispute,Classify the customer request as 'Fee Dispute & Waiver' if they mention an unexpected overdraft fee.,Yes,Output-First,I recently received an overdraft fee for a transaction I didn't even know went through my account. It seems like a mistake and I need to dispute it. Can you help me with this?,fee_dispute,4,"The output 'fee_dispute' is clear and relevant, but it lacks the detailed steps or instructions that would be necessary for a user to follow in a real-world scenario."
+INST_12,SEED_02,Fee Dispute & Waiver,fee_dispute,Verify the customer's account tenure to determine eligibility for a courtesy waiver.,No,Input-First,"Subject: Request for Account Tenure Verification
+
+Dear Banking Team,
+
+I hope this message finds you well. I am writing to request verification of my account tenure with [Bank Name] to ensure I qualify for the courtesy waiver on my recent transaction.
+
+The transaction in question was made on [Transaction Date] and involved a payment of $500 to [Merchant Name]. I recently received an email stating that I might be eligible for a courtesy waiver due to my long-standing relationship with your bank. However, I would like to confirm my account tenure to make sure everything is in order.
+
+Could you please provide me with the details of my account tenure? This will help me understand if I meet the criteria for the courtesy waiver.
+
+Thank you very much for your assistance.
+
+Best regards,
+
+[Your Full Name]
+[Your Account Number]
+[Your Contact Information]","1. Verify identity of the customer using `verify_identity` to ensure the correct account is being checked.
+2. Check account status for the specified account number using `check_account_status`.
+3. Retrieve and record the account tenure details from the account status information.
+4. Send confirmation of account tenure details to the customer using `send_confirmation`.
+5. If the account tenure does not meet the eligibility criteria for the courtesy waiver, escalate the issue to a human representative using `escalate_to_human` to provide further assistance or clarification.
+6. Execute any additional actions required based on the outcome of the verification process, such as providing alternative solutions or further documentation requests.",5,"Correctness, Completeness, Clarity, Relevance, Executability, and Banking Safety criteria are all met."
+INST_13,SEED_02,Fee Dispute & Waiver,fee_dispute,Request the customer to provide their account statement for the period in question.,No,Input-First,"Subject: Request for Account Statement - April 2023
+
+Dear [Customer's Name],
+
+I hope this message finds you well.
+
+Could you please provide us with your account statement for the month of April 2023? Specifically, I would need the following details:
+
+- Your checking account statement
+- Any transactions made at [Merchant Name], if applicable
+- The total amount spent on [Merchant Name] during April
+
+Your prompt attention to this request would be greatly appreciated.
+
+Thank you for your cooperation.
+
+Best regards,
+
+[Your Full Name]  
+[Your Position]  
+[Bank's Name]  
+[Contact Information]  
+[Email Address]","1. Verify identity of the customer using `verify_identity` tool.
+2. Check the account status for the customer's checking account using `check_account_status` tool.
+3. If the account is active and the customer has provided all necessary information, proceed to generate the account statement for April 2023.
+4. Extract the specific details requested:
+   - Checking account statement
+   - Transactions made at [Merchant Name], if applicable
+   - Total amount spent on [Merchant Name] during April
+5. Generate the account statement with the requested details.
+6. Execute action to send the account statement to the customer via email or preferred method.
+7. Send confirmation to the customer that the account statement has been sent.
+8. If any issues arise during the process, escalate to a human representative using `escalate_to_human` tool.",5,"The workflow is correct, complete, clear, relevant, executable, and prioritizes banking safety throughout."
+INST_14,SEED_02,Fee Dispute & Waiver,fee_dispute,Check the bank's policy on courtesy waivers for customers with over six months of account tenure.,No,Input-First,"Subject: Inquiry About Courtesy Waiver Policy for Long-Term Customers
+
+Dear Banking Team,
+
+I hope this message finds you well.
+
+I am writing to inquire about the bank's policy regarding courtesy waivers for customers who have maintained an account with us for over six months. Specifically, I would like to know if there are any conditions or exceptions to this policy, especially in cases where the customer has been a loyal and active member of our community.
+
+For context, I have been a customer of your esteemed bank for approximately 780 days, which qualifies me under the policy you mentioned. However, I would like to ensure that my continued loyalty is recognized and appreciated, particularly given my consistent transactions and contributions to the community through various merchant partnerships.
+
+Could you please provide more detailed information on how this policy applies to my situation? Additionally, if there are any specific amounts or types of transactions that might be considered for a courtesy waiver, I would appreciate knowing those details as well.
+
+Thank you very much for your time and assistance. I look forward to your prompt response.
+
+Best regards,
+
+[Your Name]","1. Verify identity of the customer using `verify_identity`.
+2. Check the account status of the customer using `check_account_status`.
+3. If the account status is active and the customer has been a long-term customer (over 6 months), proceed to the next step; otherwise, escalate the request to a human representative using `escalate_to_human`.
+4. Send a confirmation email to the customer acknowledging receipt of their inquiry and the steps being taken to address it using `send_confirmation`.
+5. Based on the account status and duration of membership, determine if the customer qualifies for a courtesy waiver based on the bank's policy and any exceptions or conditions. If applicable, provide details on the courtesy waiver policy and any specific amounts or types of transactions that might be considered for a waiver using `execute_action`.
+6. Send a follow-up email to the customer with the details of the courtesy waiver policy and any relevant exceptions, confirming the action taken using `send_confirmation`.
+7. Escalate the request to a human representative if the customer has any further questions or concerns after reviewing the provided information using `escalate_to_human`.",5,"The workflow covers all criteria effectively: correctness, completeness, clarity, relevance, executability, and banking safety."
+INST_15,SEED_02,Fee Dispute & Waiver,fee_dispute,Confirm with the customer if they have any outstanding payments that could be causing the overdraft.,No,Input-First,"Subject: Overdraft Alert - Please Review Your Account
+
+Dear [Customer's Name],
+
+I hope this message finds you well. I wanted to bring to your attention an alert regarding your recent transactions and account balance.
+
+After reviewing your account, it appears there might be some outstanding payments that could be contributing to your current overdraft situation. Specifically, on [Date], you made a payment of $150 to [Merchant Name] via [Payment Method]. This transaction is reflected in your account statement.
+
+Could you please confirm if you received confirmation from [Merchant Name] that this payment was successfully processed? If not, we may need to investigate further.
+
+Thank you for your prompt response and cooperation. We appreciate your understanding and look forward to resolving this matter promptly.
+
+Best regards,
+
+[Your Full Name]  
+Customer Service Representative  
+[Bank Name]  
+[Contact Information]","1. Verify identity of the customer using `verify_identity` tool.
+2. Check account status for the customer using `check_account_status` tool.
+3. Send a confirmation email to the customer with details of the recent transaction and the request for confirmation of payment processing to [Merchant Name] using `send_confirmation` tool.
+4. Execute action based on the customer's response:
+   a. If the customer confirms receipt of payment confirmation, proceed to the next step.
+   b. If the customer does not respond or provides no confirmation, escalate the issue to a human representative using `escalate_to_human` tool.
+5. Investigate further into the transaction and the customer's account to ensure there are no discrepancies or errors.
+6. Once the issue is resolved, update the account status and notify the customer using `execute_action` tool.
+7. Send a follow-up email to the customer confirming the resolution of the overdraft alert using `send_confirmation` tool.
+8. Escalate the case to a human representative if necessary, using `escalate_to_human` tool.
+9. Document the entire process and outcome for future reference and improvement.
+10. Ensure compliance with all relevant regulations and guidelines during the process.",5,"The workflow addresses all criteria effectively: correctness, completeness, clarity, relevance, executability, and banking safety."
+INST_17,SEED_02,Fee Dispute & Waiver,fee_dispute,Ask the customer to confirm if they received a notification about the overdraft fee.,No,Input-First,"Subject: Confirmation Needed: Overdraft Fee Notification
+
+Dear [Customer Name],
+
+I hope this email finds you well.
+
+I wanted to follow up regarding your recent transaction on [Account Type] account number [Account Number]. We noticed that there was an overdraft fee of $50 charged on [Merchant Name] on [Transaction Date].
+
+Could you please confirm if you have received any notification about this fee? If not, we can look into it further.
+
+Thank you for your attention to this matter.
+
+Best regards,
+
+[Your Full Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. Verify the identity of the customer using `verify_identity` to ensure the correct account and details are being processed.
+2. Check the account status for the specified account number and transaction date using `check_account_status`.
+3. If the overdraft fee is confirmed, proceed to step 4; otherwise, continue with step 5.
+4. Send a confirmation email to the customer, informing them of the overdraft fee and providing details of the transaction, using `send_confirmation`.
+5. Escalate the issue to a human representative for further investigation if necessary, using `escalate_to_human`.",5,"The output provides clear, unambiguous instructions for verifying the customer's identity, checking the account status, sending a confirmation email, and escalating the issue if necessary. It covers all aspects of the workflow efficiently and effectively."
+INST_18,SEED_02,Fee Dispute & Waiver,fee_dispute,Review the customer's account activity to identify any potential errors or discrepancies.,No,Input-First,"Subject: Request for Account Review
+
+Dear Banking Team,
+
+I hope this message finds you well. I recently noticed some unusual activity on my checking account and would like to request a thorough review of my account activity. Specifically, on March 15th, there was a transaction from a merchant named ""TechMart"" for $200 that I do not recall making. Additionally, on March 17th, there was a withdrawal of $50 that I also cannot recall.
+
+Could you please investigate these transactions? I want to ensure everything is accurate and correct.
+
+Thank you very much for your assistance.
+
+Best regards,
+[Your Name]","1. Verify the identity of the customer using the `verify_identity` tool.
+2. Check the account status for any recent transactions or alerts related to the account using the `check_account_status` tool.
+3. If the account status shows unusual activity, proceed with a detailed review of the account activity, focusing on the transactions from March 15th and March 17th, using the `execute_action` tool.
+4. Document the findings of the account review, including details of the transactions from TechMart and the $50 withdrawal.
+5. Send a confirmation email to the customer, summarizing the findings of the account review, using the `send_confirmation` tool.
+6. Escalate the case to a human representative if the account review reveals any suspicious activity or if further investigation is required, using the `escalate_to_human` tool.",5,"The output provided meets all the criteria for correctness, completeness, clarity, relevance, executability, and banking safety."
+INST_19,SEED_02,Fee Dispute & Waiver,fee_dispute,Suggest the customer contact their account manager for further assistance if the issue persists.,No,Input-First,"Dear Customer,
+
+I hope this message finds you well. I noticed that there seems to be an issue with your recent transaction at XYZ Merchant, where you attempted to withdraw $500 from your Checking Account. Unfortunately, the transaction did not go through as expected.
+
+If you continue to experience issues with this transaction or any other banking services, please feel free to reach out to my account manager at [Account Manager's Contact Information] for further assistance. They will be able to guide you through the next steps and resolve any concerns you may have.
+
+Thank you for bringing this to our attention, and we appreciate your patience as we work on resolving the issue.
+
+Best regards,
+[Your Name]
+Customer Service Representative","1. Verify identity of the customer using `verify_identity` to ensure the correct account is being addressed.
+2. Check the account status for the specific transaction related to the withdrawal attempt using `check_account_status`.
+3. If the transaction is pending or in dispute, attempt to resolve it directly using `execute_action` if possible.
+4. If the issue persists, escalate the case to a human representative using `escalate_to_human` for further investigation and resolution.
+5. Send a confirmation email to the customer via `send_confirmation` to inform them of the action taken and the next steps.
+6. Follow up with the customer service representative to ensure they have been informed of the escalation and are aware of the ongoing process.",5,"The output provides clear, actionable steps for each criterion, ensuring correctness, completeness, clarity, relevance, executability, and banking safety."
+INST_21,SEED_03,Balance Inquiry,balance_inquiry,Classify the customer request as 'Balance Inquiry' for a primary checking account.,Yes,Output-First,I'd like to check my current balance on my primary checking account. Could you please let me know?,balance_inquiry,5,"The output 'balance_inquiry' is clear, unambiguous, and directly relevant to the customer's request for checking their current balance on their primary checking account. It correctly uses banking domain terminology and adheres to all criteria without any issues."
+INST_22,SEED_03,Balance Inquiry,balance_inquiry,"Authenticate the user with their username and password, then proceed to check the balance in both the primary checking and high-yield savings accounts.",No,Input-First,"Subject: Request for Account Balance Verification
+
+Dear Banking Team,
+
+I hope this message finds you well.
+
+Could you please authenticate me using my username ""Customer123"" and password ""SecurePass123""? Once authenticated, I would like to check the balance in both my primary checking account and my high-yield savings account. Specifically, I am interested in the balances as of today's date, which is [Insert Date].
+
+Thank you very much for your assistance.
+
+Best regards,
+[Your Name]","1. Use `verify_identity` with the provided credentials (""Customer123"", ""SecurePass123"") to authenticate the user.
+2. After successful authentication, use `execute_action` to initiate the request for account balance verification for both the primary checking account and the high-yield savings account.
+3. Ensure that the request specifies the date of interest as ""today's date"" (inserted date).
+4. Use `check_account_status` to retrieve the account balances for the specified accounts on the requested date.
+5. Send `send_confirmation` to inform the customer of the retrieved account balances.
+6. If any issues arise during the process, use `escalate_to_human` to involve a human representative for further assistance.",5,"The workflow is correct, complete, clear, relevant, executable, and prioritizes banking safety."
+INST_24,SEED_03,Balance Inquiry,balance_inquiry,"After verifying the user's identity, retrieve the balance information from the primary checking account and confirm it is available for immediate use.",No,Input-First,"Subject: Confirmation of Primary Checking Account Balance
+
+Dear [Customer Name],
+
+I hope this message finds you well.
+
+Upon verification of your identity, I have successfully retrieved the balance information from your Primary Checking Account. The current balance is $5,000 USD, which is fully available for immediate use.
+
+Thank you for choosing our banking services.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. Use `verify_identity` to confirm the identity of the customer.
+2. Use `check_account_status` to retrieve the balance information for the Primary Checking Account.
+3. Execute `execute_action` to ensure that the action taken is to confirm the balance and not to perform any financial transactions.
+4. Send `send_confirmation` to the customer with the balance information ($5,000 USD).
+5. If the balance status or any other details require further human intervention, escalate the case to a human representative using `escalate_to_human`.",5,"The workflow demonstrates correct, complete, clear, relevant, executable actions, and prioritizes banking safety throughout."
+INST_25,SEED_03,Balance Inquiry,balance_inquiry,Request the user to provide their account number for the balance inquiry on the primary checking account.,No,Input-First,"Subject: Urgent Balance Inquiry - Primary Checking Account
+
+Dear [Customer Name],
+
+I hope this message finds you well.
+
+I am writing to request your assistance in verifying the balance of your Primary Checking Account. For your reference, the account number is [Account Number].
+
+If possible, could you please provide the account number so we can proceed with the balance inquiry?
+
+Thank you very much for your prompt attention to this matter.
+
+Best regards,
+
+[Your Full Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]  
+[Date]","1. verify_identity
+2. check_account_status
+3. execute_action
+4. send_confirmation
+5. escalate_to_human",5,"The output provided aligns well with the criteria as follows:
+1. Correctness: The terms used are accurate and relevant.
+2. Completeness: All necessary steps are covered.
+3. Clarity: Phrasing is clear and unambiguous.
+4. Relevance: Focuses strictly on the customer's scenario.
+5. Executability: Steps are actionable and logically ordered.
+6. Banking Safety: Includes identity verification and ensures PII safety."
+INST_26,SEED_03,Balance Inquiry,balance_inquiry,Confirm the user's identity through a multi-factor authentication method before initiating the balance inquiry for the high-yield savings account.,No,Input-First,"Subject: Confirmation Required - Multi-Factor Authentication for High-Yield Savings Account Inquiry
+
+Dear [Customer Name],
+
+I hope this message finds you well.
+
+We have received your request to check the balance of your High-Yield Savings Account. To ensure the security and integrity of your account, we require you to complete a multi-factor authentication process.
+
+Please follow these steps:
+
+1. Log in to your online banking platform.
+2. Navigate to the section where you can initiate a balance inquiry for your High-Yield Savings Account.
+3. Follow the on-screen instructions to confirm your identity using a second factor such as a one-time password sent to your registered mobile number or email address.
+
+Once you have successfully completed the multi-factor authentication, you will be able to view your account balance.
+
+If you encounter any issues during this process or need further assistance, please do not hesitate to contact our support team at [Support Contact Information].
+
+Thank you for your cooperation.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. execute_action - Confirm user's login credentials via verification system.
+2. send_confirmation - Send a one-time password (OTP) to the user's registered mobile number or email address.
+3. verify_identity - Verify the user's identity using the OTP received.
+4. check_account_status - Retrieve the High-Yield Savings Account status for the user.
+5. execute_action - Allow access to the account balance inquiry feature.
+6. escalate_to_human - If the user encounters issues, escalate the case to a human representative for further assistance.",5,The response addresses all criteria effectively with clear explanations and actionable steps.
+INST_27,SEED_03,Balance Inquiry,balance_inquiry,Instruct the user to input their security question and answer to authenticate themselves before accessing the balance of the primary checking account.,No,Input-First,"Dear Customer,
+
+We are requesting that you provide your security question and answer to authenticate yourself before accessing the balance of your Primary Checking Account. This is an important step to ensure the security of your funds.
+
+For your reference, your account number is 1234567890 and it is a Primary Checking Account. The merchant name associated with this transaction is ABC Bank. Please note that no funds will be deducted from your account at this time.
+
+Thank you for your cooperation.
+
+Best regards,
+[Your Name]  
+[Your Account Number]  
+[Merchant Name]  
+[Date]","1. Verify identity using `verify_identity` tool with the provided account number and merchant name to confirm the authenticity of the request.
+2. Check account status using `check_account_status` tool with the provided account number to ensure the account is active and there are no pending transactions or issues.
+3. Execute action using `execute_action` tool to prompt the customer to provide their security question and answer.
+4. Send confirmation using `send_confirmation` tool to inform the customer that their security question and answer have been received and are being verified.
+5. If the security question and answer are correct, proceed to the next step; if not, escalate to human intervention using `escalate_to_human` tool.
+6. Once the security question and answer are confirmed, execute the action to allow access to the balance of the Primary Checking Account.
+7. Send a final confirmation using `send_confirmation` tool to inform the customer that they have successfully accessed their account balance.
+8. Escalate to human intervention using `escalate_to_human` tool if any issues arise during the process or if further assistance is needed.",5,"The workflow is comprehensive, clear, relevant, executable, and prioritizes banking safety throughout."
+INST_28,SEED_03,Balance Inquiry,balance_inquiry,Execute the balance inquiry for the high-yield savings account after successfully authenticating the user with their biometric data.,No,Input-First,"Subject: Balance Inquiry for High-Yield Savings Account
+
+Dear [Customer's Name],
+
+I hope this message finds you well.
+
+As per your request, I have executed a balance inquiry on your High-Yield Savings Account and would like to share the following details:
+
+- Account Type: High-Yield Savings
+- Merchant Name: [Bank Name]
+- Balance Inquiry Date: [Current Date]
+- Balance Inquiry Amount: $10,000 (as of [Current Date])
+
+Your account balance is currently at $10,500. If you have any questions or need further assistance, please do not hesitate to contact us.
+
+Thank you for choosing [Bank Name] for your financial needs.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. Verify identity of the customer using `verify_identity` tool.
+2. Check the status of the High-Yield Savings Account using `check_account_status` tool.
+3. Execute an action to perform a balance inquiry on the High-Yield Savings Account.
+4. Retrieve the balance inquiry amount of $10,000 as of the current date.
+5. Send a confirmation message to the customer with the balance inquiry details using `send_confirmation` tool.
+6. Escalate to a human if necessary, but based on the given tools, this step is not required as all actions can be automated.",5,"The workflow meets all criteria perfectly: it uses accurate banking domain terminology, covers all requested requirements, is clear and unambiguous, strictly focuses on the customer scenario, is executable without needing human intervention, and ensures banking safety through identity verification."
+INST_29,SEED_03,Balance Inquiry,balance_inquiry,"Provide the user with the balance details for both the primary checking and high-yield savings accounts, ensuring all information is accurate and up-to-date.",No,Input-First,"Subject: Balance Details for Primary Checking and High-Yield Savings Accounts
+
+Dear [Customer's Name],
+
+I hope this message finds you well.
+
+Here are your current balance details for both your Primary Checking Account and High-Yield Savings Account:
+
+- **Primary Checking Account**: Your balance stands at $1,500.00. There have been no transactions today.
+- **High-Yield Savings Account**: Your balance is currently at $2,500.00. A deposit of $500.00 from XYZ Merchant was credited to your account yesterday.
+
+Please let me know if you have any questions or need further assistance.
+
+Best regards,
+
+[Your Name]  
+Retail Banking Team  
+Alibaba Cloud","1. Verify identity of the customer using `verify_identity`.
+2. Check the status of the Primary Checking Account using `check_account_status` with the account number for the Primary Checking Account.
+3. Check the status of the High-Yield Savings Account using `check_account_status` with the account number for the High-Yield Savings Account.
+4. Execute action to send confirmation of balance details to the customer via email using `send_confirmation`.
+5. Send escalation to human if necessary using `escalate_to_human`.",5,The output meets all criteria with clear explanations and actionable steps.
+INST_30,SEED_03,Balance Inquiry,balance_inquiry,Ask the user to verify the balance information provided by confirming the total amount displayed.,No,Input-First,"Subject: Verification Request for Account Balance
+
+Dear [Customer Name],
+
+I hope this message finds you well.
+
+We noticed that your recent transaction summary shows a balance of $500 in your Checking Account with us. Could you please confirm if this is correct by verifying the total amount displayed on your account statement?
+
+If everything checks out, we appreciate your prompt response. If there are any discrepancies, please let us know so we can investigate further.
+
+Thank you for your attention to this matter.
+
+Best regards,
+
+[Your Name]  
+Customer Service Representative  
+[Bank Name]  
+[Contact Information]","1. Use `verify_identity` to ensure the identity of the customer requesting the verification.
+2. Use `check_account_status` to verify the current account balance and transaction history.
+3. Execute action based on the verification results:
+   - If the balance matches the reported amount, proceed to step 4.
+   - If there are discrepancies, escalate to step 5.
+4. Send `send_confirmation` to the customer with the verified account balance information.
+5. Escalate to a human representative using `escalate_to_human` if the discrepancy cannot be resolved automatically or if the customer has additional concerns.
+6. Follow up with the customer via `send_confirmation` once the issue has been resolved or escalated.",5,"The workflow is clear, relevant, executable, and ensures banking safety through identity verification and supervisor escalation."
+INST_31,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Classify customer notification to determine whether it is an unauthorized fraud dispute or merchant billing error.,Yes,Output-First,"Dear Customer Support,
+
+I am writing to report an unauthorized transaction on my account. I recently received a statement showing charges for services I did not authorize or use. Could you please investigate and resolve this issue as soon as possible?
+
+Thank you,
+[Your Name]",fraud_dispute,4,High quality banking pair satisfying criteria.
+INST_32,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Categorize transaction dispute regarding recurring subscription charge billed after cancellation.,Yes,Output-First,"Dear Support Team,
+
+I am writing to report a potential fraud dispute regarding a recent transaction. I recently canceled my recurring subscription service for your bank's premium account, but I received an unexpected charge on my last statement. This seems suspicious and I believe it might be fraudulent.
+
+Could you please investigate this matter? I want to ensure that my financial information is secure and that no unauthorized charges have been made in my name.
+
+Thank you for your assistance.
+
+Best regards,
+[Customer Name]",fraud_dispute,4,High quality banking pair satisfying criteria.
+INST_33,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Identify whether customer message represents an account takeover alert or compromised card dispute.,Yes,Output-First,"Dear Bank Team,
+
+I'm writing to inform you that I recently noticed unauthorized transactions on my credit card statement. There have been several charges made in different locations and currencies that I did not authorize. Could you please investigate this matter as soon as possible? This seems like an account takeover attempt.
+
+Thank you,
+[Your Name]",fraud_dispute,4,High quality banking pair satisfying criteria.
+INST_34,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Cardholder reports unrecognized international transaction of $120 from online merchant; initiate fraud dispute.,No,Input-First,"Subject: Report of Unrecognized International Transaction
+
+Dear Banking Team,
+
+I am writing to report an unusual transaction on my account. On [Date], I received an international transaction of $120 from an online merchant named ""EcoFit Gear"" located in [Country]. This transaction was not authorized by me and I have never made any purchases from this merchant before.
+
+My account is a [Type of Account] with account number [Account Number]. The transaction ID is [Transaction ID] and it was processed through [Bank Name] card.
+
+Could you please investigate this matter and assist me in disputing this unauthorized charge? I would appreciate your prompt attention to this issue.
+
+Thank you for your assistance.
+
+Best regards,
+[Your Full Name]
+[Your Account Number]
+[Contact Information]","1. Verify the identity of the customer using `verify_identity` to ensure the authenticity of the request.
+2. Check the account status for the specified account number using `check_account_status` to confirm the existence and type of account.
+3. Retrieve the transaction details associated with the provided transaction ID using `check_account_status`.
+4. Confirm that the transaction was processed through the specified bank name using `check_account_status`.
+5. If the transaction is confirmed as unauthorized, initiate the dispute process using `execute_action`.
+6. Send a confirmation message to the customer via `send_confirmation` to inform them that the dispute has been initiated.
+7. Escalate the case to a human representative if necessary using `escalate_to_human` to handle any complex issues or further verification required.",5,"The workflow covers all six criteria effectively: correctness, completeness, clarity, relevance, executability, and banking safety. Each step is clear, actionable, and relevant to the customer scenario."
+INST_35,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Dispute duplicate card charge billed simultaneously at local retail store and request merchant investigation.,No,Input-First,"Subject: Request for Investigation on Duplicate Charge
+
+Dear Banking Team,
+
+I am writing to dispute a duplicate charge that was applied to my account on [Date of Transaction]. The transaction ID is [Transaction ID] and it appears twice in my statement. Both charges were made on [Date of Transaction] at [Merchant Name], located at [Address of Merchant].
+
+The total amount charged is $50.00. I have not made any purchases at this merchant on this date. This has caused confusion and inconvenience as I believe this is a duplicate charge.
+
+Could you please investigate this matter further? I would appreciate your assistance in resolving this issue promptly.
+
+Thank you for your attention to this matter.
+
+Sincerely,
+[Your Full Name]
+[Your Account Number]","1. Verify the identity of the customer using `verify_identity` with the provided account number.
+2. Check the account status for any recent transactions or disputes related to the account using `check_account_status`.
+3. If the account status indicates no recent issues, proceed to review the specific transaction details for the duplicate charge using `execute_action` on the transaction ID provided.
+4. Confirm with the customer that the duplicate charge has been identified and is being reviewed.
+5. Escalate the case to a human representative if the duplicate charge cannot be resolved through automated means, using `escalate_to_human`.
+6. Send a confirmation email to the customer regarding the progress of the investigation and expected resolution time, using `send_confirmation`.",5,"Correctness, Completeness, Clarity, Relevance, Executability, and Banking Safety criteria are all met."
+INST_36,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Customer identifies unauthorized recurring subscription fee billed after cancellation confirmation.,No,Input-First,"Subject: Concern About Unauthorized Recurring Subscription Fee After Cancellation
+
+Dear Banking Team,
+
+I hope this message finds you well. I recently canceled my account with [Merchant Name], but I received an unexpected recurring subscription fee on my last statement. This fee was not part of my previous subscription and I have no record of authorizing it.
+
+My account is a [Account Type] and the transaction in question was for $50.00. The date of the charge was [Date of Charge].
+
+Could you please investigate this matter and ensure that I am not being charged for services I did not authorize? I would appreciate your prompt attention to this issue.
+
+Thank you for your assistance.
+
+Best regards,
+
+[Your Full Name]  
+[Your Account Number]  
+[Contact Information]","1. Verify identity of the customer using `verify_identity` to confirm the authenticity of the request.
+2. Check the account status of the customer's account using `check_account_status` to ensure the cancellation was processed correctly and there are no outstanding subscriptions or charges.
+3. If the account status shows any unauthorized recurring subscription fees, proceed to the next step; otherwise, close the case as resolved.
+4. Execute action to refund the unauthorized recurring subscription fee of $50.00 using `execute_action`.
+5. Send confirmation to the customer via email or phone to inform them of the refund and to confirm that the issue has been resolved using `send_confirmation`.
+6. Escalate the case to a human representative if necessary, especially if the automated process does not resolve the issue, using `escalate_to_human`.",5,"The response covers all six criteria effectively: correctness (accurate terminology), completeness (thoroughly addresses the request), clarity (unambiguous phrasing), relevance (strict focus on the customer scenario), executability (actionable steps), and banking safety (identity verification and refund process)."
+INST_37,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Report suspected account takeover attempt following unauthorized password reset SMS and freeze online access.,No,Input-First,"Subject: Urgent: Suspected Account Takeover Attempt
+
+Dear Banking Team,
+
+I am writing to report an incident that occurred today regarding my account. I recently received an unauthorized SMS with instructions to reset my password on a merchant website called ""XYZ Store."" The new password was then used to make a purchase of $500 without my knowledge.
+
+My account is a savings account with ABC Bank, and I have not initiated any transactions or password changes myself. I immediately changed my password and requested a full review of my account activity. However, I am now concerned about the possibility of my account being compromised further.
+
+Could you please take the following actions:
+
+1. Freeze all online access to my account immediately.
+2. Conduct a thorough investigation into the unauthorized password reset and subsequent transaction.
+3. Notify me of the outcome and any additional steps I should take to secure my account.
+
+Thank you for your prompt attention to this matter. I appreciate your help in securing my financial information.
+
+Sincerely,
+[Your Name]","1. Verify identity of the customer using `verify_identity` to ensure the request is genuine.
+2. Check account status for the suspected account takeover attempt using `check_account_status`.
+3. If the account status indicates a potential takeover, freeze all online access to the account using `execute_action`.
+4. Conduct a thorough investigation into the unauthorized password reset and subsequent transaction using `execute_action`.
+5. Once the investigation is complete, notify the customer of the outcome using `send_confirmation`.
+6. Based on the findings, if necessary, advise the customer on additional security measures to secure their account using `send_confirmation`.
+7. Escalate the case to a human representative if required, using `escalate_to_human`.",5,"The output provides clear, actionable steps for each criterion, ensuring correctness, completeness, clarity, relevance, executability, and banking safety."
+INST_38,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Initiate formal chargeback claim for merchandise ordered online that was never delivered by merchant.,No,Input-First,"Subject: Formal Chargeback Request for Unfulfilled Order
+
+Dear Banking Team,
+
+I am writing to formally request a chargeback on my recent order from [Merchant Name], which I placed on your platform through my [Account Type] account. The order ID is #123456789 and the total amount charged was $120.00.
+
+Unfortunately, I have not received the merchandise ordered, despite multiple attempts to contact the merchant and receive a delivery update. I have been in communication with the merchant regarding the status of my order, but they have yet to provide any updates or resolve the issue.
+
+Given the circumstances, I believe it is necessary to initiate a formal chargeback process to ensure that I am not held responsible for an order that has not been fulfilled. Please let me know if you need any further information or documentation to proceed with this request.
+
+Thank you for your assistance.
+
+Sincerely,
+[Your Full Name]
+[Your Account Number]
+[Your Contact Information]","1. Verify the identity of the customer using `verify_identity` to confirm the details provided match the records.
+2. Check the account status of the customer's account using `check_account_status` to ensure there are sufficient funds available for the chargeback.
+3. Send a confirmation email to the customer acknowledging receipt of their chargeback request and providing them with next steps.
+4. Execute the formal chargeback action against the merchant's account using `execute_action`.
+5. Send a follow-up email to the customer to inform them of the chargeback execution and provide them with estimated timeframes for the refund to be processed.
+6. Escalate the case to a human representative if the merchant does not respond within a reasonable timeframe or if additional information is needed to proceed.
+7. Monitor the chargeback status and notify the customer of any updates or changes.
+8. If the chargeback is successful, send a final confirmation email to the customer regarding the refund process and expected timeline.
+9. Archive the case for future reference and record the outcome of the chargeback process.",5,"The workflow covers all six criteria (Correctness, Completeness, Clarity, Relevance, Executability, and Banking Safety) thoroughly and logically."
+INST_39,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Issue provisional credit of $450 for disputed foreign currency transaction pending arbitration outcome.,No,Input-First,"Subject: Provisional Credit Request for Disputed Foreign Currency Transaction
+
+Dear [Customer Name],
+
+I hope this message finds you well.
+
+I am writing to inform you about a recent dispute involving a foreign currency transaction from our merchant, [Merchant Name], which has been pending arbitration. As per our agreement and to ensure your funds are protected during this period, we have decided to issue a provisional credit of $450 to your account.
+
+Please note that this is a temporary measure pending the final outcome of the arbitration. Once the decision is made, we will adjust the balance accordingly.
+
+If you have any questions or need further assistance, please do not hesitate to contact us at [Customer Service Contact Information].
+
+Thank you for your understanding and cooperation.
+
+Best regards,
+
+[Your Full Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. Verify the identity of the customer using `verify_identity` to ensure the request is coming from an authorized customer.
+2. Check the account status of the customer's account to confirm there are sufficient funds available for the provisional credit using `check_account_status`.
+3. Execute the action of issuing a provisional credit of $450 to the customer's account using `execute_action`.
+4. Send a confirmation to the customer via email or another preferred method to inform them of the provisional credit issuance and provide details such as the amount and the account number where the credit was applied using `send_confirmation`.
+5. Escalate the case to a human representative if necessary, but given the automated nature of the request, this step might be skipped unless there are specific issues or concerns that arise during the process. Use `escalate_to_human` if needed.
+6. Monitor the account for any changes in status or additional requests related to the disputed transaction.
+7. Follow up with the customer regarding the final outcome of the arbitration and make any necessary adjustments to the account balance using `send_confirmation` or other communication methods.
+8. Archive the case for future reference and ensure all records are updated accordingly.",5,"The workflow covers all six criteria (Correctness, Completeness, Clarity, Relevance, Executability, and Banking Safety) thoroughly and effectively."
+INST_40,SEED_04,Fraudulent Transaction Dispute,fraud_dispute,Investigate suspicious micro-charges appearing on checking account indicative of card-testing fraud.,No,Input-First,"Subject: Concern About Recent Charges on My Checking Account
+
+Dear Banking Team,
+
+I hope this message finds you well. I recently noticed some unusual charges on my checking account that I believe may be related to card testing fraud. Specifically, there have been several small charges totaling $10 each, all from different merchants. The merchants include:
+
+- Merchant A: Name of the business, but I'm not sure of the exact location.
+- Merchant B: Name of the business, also unknown.
+- Merchant C: Name of the business, again unknown.
+
+Each charge is for $10 and has been made over the past week. I've never made these purchases myself, and they don't appear in my transaction history. Could you please investigate these charges? I want to ensure that my account remains secure and that any fraudulent activity is addressed promptly.
+
+Thank you very much for your assistance.
+
+Sincerely,
+[Your Full Name]
+[Your Account Number]","1. Verify identity of the customer using `verify_identity` tool.
+2. Check account status for recent transactions and identify any unauthorized or suspicious activities using `check_account_status` tool.
+3. If suspicious activities are detected, escalate the case to a human representative for further investigation and action using `escalate_to_human` tool.
+4. Once the investigation is completed, execute actions based on the findings. If fraudulent activity is confirmed, take necessary steps such as blocking the accounts involved, refunding the funds, and alerting law enforcement if required using `execute_action` tool.
+5. Send a confirmation email to the customer regarding the status of their account and the actions taken to address the issue using `send_confirmation` tool.
+6. Monitor the account for any further suspicious activity and take appropriate action as needed using `monitor_account_activity` tool.",5,"The workflow addresses all criteria with clear, actionable steps and ensures banking safety."
+INST_41,SEED_05,Account Closure,account_closure,Classify customer request to determine whether inquiry is for account closure procedure or immediate termination.,Yes,Output-First,I need to close my account immediately due to some personal issues. Can you assist me with the process?,account_closure,5,"The output 'account_closure' is clear and unambiguous, directly addressing the customer's request for account closure. It adheres to the banking domain terminology and logic, ensuring correctness. The response is comprehensive in covering the immediate action required, maintaining completeness. The phrasing is clear and unambiguous, ensuring clarity. The response strictly focuses on the customer scenario without extraneous information. The output is actionable and logical, providing a clear instruction for the next steps. Additionally, it prioritizes customer safety by indicating an immediate action needed, which aligns with banking safety practices."
+INST_42,SEED_05,Account Closure,account_closure,Categorize user inquiry asking about joint account closure authority vs individual account closure.,No,Input-First,"Subject: Inquiry About Joint Account Closure Authority
+
+Dear Banking Team,
+
+I hope this message finds you well.
+
+I am writing to inquire about the closure authority for our joint accounts. Specifically, I would like to understand if there is any difference in the closure process between a joint account and an individual account. 
+
+For context, we have two joint accounts with your bank, one for personal use and another for business purposes. The personal account has been inactive for some time and I'm considering closing it. However, I want to ensure that I follow the correct procedure since the business account is still active and requires joint approval.
+
+Could you please provide more information on the closure process for each type of account? Additionally, if there are any specific documents or steps required for the closure of a joint account, I would appreciate guidance on those as well.
+
+Thank you very much for your assistance.
+
+Best regards,
+[Your Full Name]
+[Your Contact Information]","1. Verify identity of the customer through `verify_identity` to confirm their account details and authorization to proceed with the inquiry.
+2. Check the status of both joint accounts (personal and business) using `check_account_status` to ensure they are active and to gather necessary account numbers and account holder details.
+3. Research and document the differences in the closure process between a joint account and an individual account based on the gathered information.
+4. Prepare a detailed guide on the closure process for a joint account, including any specific documents or steps required, based on the research conducted in step 3.
+5. Send a confirmation email to the customer, providing them with the detailed guide on the closure process for a joint account, along with any necessary documents or steps they need to follow.
+6. If the customer requests further clarification or assistance, escalate the inquiry to a human representative through `escalate_to_human`.
+7. Follow up with the customer via email or phone to ensure they have received the requested information and to address any additional questions or concerns they may have.
+8. Execute the closure process for the personal joint account according to the provided instructions, ensuring all necessary steps are followed.
+9. Send a confirmation email to the customer once the personal joint account",5,The workflow addresses all criteria effectively and provides a comprehensive solution.
+INST_43,SEED_05,Account Closure,account_closure,Identify whether customer intent is certificate of deposit liquidation vs early withdrawal penalty review.,Yes,Output-First,I need to close my CD account due to some personal financial changes. Could you please help me understand if there will be any penalties for early closure?,account_closure,4,The output 'account_closure' is not clear or relevant to the question asked. It does not address the specific concern about penalties for early closure.
+INST_44,SEED_05,Account Closure,account_closure,Customer requests closure of secondary savings account; verify zero balance and lack of pending ACH debits.,No,Input-First,"Subject: Request to Close Secondary Savings Account
+
+Dear Banking Team,
+
+I am writing to request the closure of my secondary savings account, which has been inactive for some time. I would like to ensure that all transactions have been settled and there are no pending ACH debits before proceeding.
+
+Here are the details of the account:
+
+- Account Type: Secondary Savings
+- Account Number: 123456789012345678
+- Account Name: [Customer's Full Name]
+- Routing Number: 111000021
+- Bank Name: ABC Bank
+
+Could you please confirm that the account is in good standing with a zero balance and no pending ACH debits? Once these conditions are met, I would appreciate it if you could close the account.
+
+Thank you for your assistance.
+
+Best regards,
+[Customer's Full Name]  
+[Customer's Contact Information]  
+[Date]","1. Verify identity of the customer using `verify_identity` tool.
+2. Check the status of the secondary savings account using `check_account_status` tool, ensuring it has a zero balance and no pending ACH debits.
+3. If the account meets the criteria, proceed to close the account using `execute_action` tool.
+4. Send a confirmation message to the customer via `send_confirmation` tool, informing them that their account has been closed.
+5. If any issues arise during the process or if the account does not meet the criteria, escalate the issue to a human representative using `escalate_to_human` tool for further investigation and resolution.",5,"The workflow is correct, complete, clear, relevant, executable, and prioritizes banking safety throughout the process."
+INST_45,SEED_05,Account Closure,account_closure,"Terminate dormant checking account, verify customer identity, and transfer remaining $145.20 to primary account.",No,Input-First,"Subject: Request to Terminate Dormant Checking Account and Transfer Funds
+
+Dear Banking Team,
+
+I hope this message finds you well.
+
+I would like to request the termination of my dormant checking account with account number 123456789 and the transfer of any remaining funds to my primary account. The balance in my dormant account is $145.20 as of today.
+
+Could you please proceed with terminating the dormant account and transferring the funds to my primary account, which has an account number 987654321? I have attached a copy of my ID for verification purposes.
+
+Thank you for your assistance.
+
+Best regards,
+[Your Full Name]  
+[Your Contact Information]  
+[Primary Account Number: 987654321]","1. Verify identity using `verify_identity` with the provided ID.
+2. Check account status using `check_account_status` for account number 123456789.
+3. If the account is confirmed as dormant and there are no active transactions or balances, proceed with the termination process.
+4. Execute action to terminate the dormant checking account using `execute_action`.
+5. Check account status again after termination to confirm the account is closed using `check_account_status`.
+6. Transfer funds from the dormant account to the primary account using `execute_action`.
+7. Confirm the transfer of funds to the primary account using `send_confirmation`.
+8. Escalate to human if necessary, but based on the automated steps, this should be unnecessary as long as all previous steps were followed correctly.",5,"The workflow is correct, complete, clear, relevant, executable, and prioritizes banking safety."
+INST_47,SEED_05,Account Closure,account_closure,"Customer moving abroad requests full account liquidation, balance wire to foreign bank, and final statement dispatch.",No,Input-First,"Subject: Request for Full Account Liquidation and Final Statement
+
+Dear Banking Team,
+
+I hope this message finds you well.
+
+I am writing to request the full liquidation of my current savings account (Account Number: 123456789012345678, Account Type: Savings). I plan to transfer the remaining balance to my new bank in [Destination Country] via wire transfer. Additionally, I would like to receive my final statement before I depart.
+
+Could you please provide me with the following information:
+- The exact balance available for transfer
+- The process for initiating the wire transfer to [Destination Bank Name], including any necessary documentation or fees
+- The expected time frame for receiving my final statement
+
+Thank you very much for your assistance with this matter. I look forward to your prompt attention to these requests.
+
+Best regards,
+
+[Your Full Name]
+[Your Contact Information]
+[Your Account Number]","1. Verify identity of the customer using `verify_identity` to ensure the request is made by the rightful account holder.
+2. Check the current account status, specifically the balance available for transfer, using `check_account_status` for the savings account with Account Number 123456789012345678.
+3. Provide the exact balance available for transfer to the customer.
+4. Guide the customer through the process of initiating a wire transfer to the destination bank, including any necessary documentation or fees, using `execute_action` with the appropriate instructions.
+5. Confirm the details of the wire transfer with the customer to ensure accuracy.
+6. Send a confirmation email to the customer with all the details provided, including the exact balance, wire transfer instructions, and expected time frame for the final statement.
+7. Execute the wire transfer action using `execute_action`.
+8. Once the wire transfer is initiated, monitor the transaction status using `execute_action` to ensure it is completed successfully.
+9. After the wire transfer is confirmed as successful, initiate the process to generate the final statement for the customer using `execute_action`.
+10. Send the final statement to the customer's preferred email address using `send",5,"The workflow addresses all criteria effectively: correctness, completeness, clarity, relevance, executability, and banking safety."
+INST_48,SEED_05,Account Closure,account_closure,Close money market account after liquidating accrued interest and disburse closing check to verified address.,No,Input-First,"Subject: Request to Close Money Market Account
+
+Dear [Customer Name],
+
+I hope this message finds you well.
+
+I am writing to inform you that we have completed the liquidation of your accrued interest from your Money Market Account and are now ready to process the closure of your account. As per our agreement, we will be disbursing the closing check to the verified address provided during your account opening.
+
+Here are the specific details:
+
+- Account Type: Money Market Account
+- Merchant Name: [Bank Name]
+- Account Number: [Account Number]
+- Closing Date: [Date of Closure]
+- Accrued Interest Amount: $[Amount of Accrued Interest]
+- Disbursement Address: [Verified Address]
+
+Please confirm receipt of these details and let us know if there are any changes to the address where the check should be sent. We aim to process this transaction promptly.
+
+Thank you for your understanding and cooperation.
+
+Best regards,
+
+[Your Full Name]  
+[Your Position]  
+[Bank Name]  
+[Contact Information]","1. Verify identity of the customer using `verify_identity` to ensure the correct account is being closed.
+2. Check the status of the Money Market Account using `check_account_status` to confirm it is in a state where it can be closed.
+3. Execute the action to close the Money Market Account using `execute_action`.
+4. Send a confirmation to the customer using `send_confirmation` with the details provided.
+5. Escalate to a human if necessary, as per the tools available, but given the automated nature of the request, this step might not be strictly required unless there are immediate issues or concerns that need human intervention.",5,"The response correctly evaluates the workflow against all six criteria and provides a detailed, actionable plan."
+INST_49,SEED_05,Account Closure,account_closure,"Initiate account closure workflow, verify no outstanding loans or negative balances, and issue closing confirmation.",No,Input-First,"Subject: Request for Account Closure
+
+Dear Banking Team,
+
+I am writing to initiate the account closure process for my current savings account. My account number is 123456789012, and it was opened on March 15th, 2020 at your branch in City Center. I have recently noticed that there are no outstanding loans or negative balances associated with this account.
+
+Could you please confirm if everything is in order and proceed with the closure? I would appreciate receiving a final confirmation email once the account has been closed.
+
+Thank you very much for your assistance.
+
+Best regards,
+[Your Full Name]
+[Your Contact Information]","1. Verify identity of the customer using `verify_identity` tool.
+2. Check the account status for account number 123456789012 using `check_account_status` tool.
+3. Confirm that there are no outstanding loans or negative balances associated with the account.
+4. Execute the account closure action for the account number 123456789012 using `execute_action` tool.
+5. Send a final confirmation email to the customer regarding the account closure using `send_confirmation` tool.
+6. If any issues arise during the account closure process, escalate to a human representative using `escalate_to_human` tool.",5,"The workflow is correct, complete, clear, relevant, executable, and prioritizes banking safety throughout the process."
+INST_50,SEED_05,Account Closure,account_closure,Terminate certificate of deposit at maturity date and transfer principal plus interest to checking account.,No,Input-First,"Subject: Request to Terminate Certificate of Deposit and Transfer Funds
+
+Dear Banking Team,
+
+I hope this message finds you well.
+
+I am writing to request that my Certificate of Deposit (CD) be terminated upon its maturity date and that the principal amount along with any accrued interest be transferred to my checking account.
+
+My account number is 1234567890 and it is a Savings CD. The maturity date of the CD is set for October 31st, 2023. I would like to ensure that the funds are transferred to my checking account, which has the account number 9876543210, as soon as possible after the CD matures.
+
+Please let me know if there are any additional steps required on my part or if there are any fees associated with this transaction. I appreciate your prompt attention to this matter.
+
+Thank you very much for your assistance.
+
+Best regards,
+
+[Your Full Name]  
+[Your Account Number]  
+[Your Checking Account Number]  
+[Date]","1. Verify identity of the customer using `verify_identity` tool.
+2. Check the current status of the Savings CD with account number 1234567890 for maturity date and any outstanding balances using `check_account_status` tool.
+3. If the CD is matured and there are no outstanding balances, proceed to transfer the principal amount along with any accrued interest to the checking account with account number 9876543210.
+4. Execute the fund transfer action using `execute_action` tool.
+5. Send a confirmation email to the customer regarding the successful termination of the CD and the transfer of funds to their checking account using `send_confirmation` tool.
+6. Escalate to a human representative if any issues arise during the process or if the customer requests further assistance, using `escalate_to_human` tool.",5,"The workflow covers all criteria including correctness, completeness, clarity, relevance, executability, and banking safety. It ensures proper identity verification, checks the account status, executes the fund transfer, and escalates issues appropriately."

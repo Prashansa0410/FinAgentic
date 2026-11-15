@@ -1,0 +1,31 @@
+# Core Agentic & Validation Frameworks
+pydantic>=2.0.0
+
+# Information Retrieval & Vector Search
+rank-bm25>=0.2.2
+sentence-transformers>=2.2.2
+faiss-cpu>=1.7.4
+
+# Deep Learning & Language Model Backends
+torch>=2.0.0
+transformers>=4.40.0
+accelerate>=0.28.0
+datasets>=2.14.0
+
+# Numerical Computing & Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Evaluation, NLP Metrics & Tokenization
+rouge-score>=0.1.2
+tiktoken>=0.5.0
+
+# Visualization & Statistical Plotting
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Runtime Utilities & Notebook Environment
+tqdm>=4.65.0
+jupyter>=1.0.0
+ipywidgets>=8.0.0
